@@ -1,0 +1,177 @@
+:root {
+    --seed-color: #8AB17D;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    color: #343f3e;
+}
+
+.flex-element {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.align-top {
+    align-items: top;
+}
+
+.center-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin-10 {
+    margin-inline: 10%;
+}
+
+.margin-20 {
+    margin-inline: 20%;
+}
+
+.link {
+    color: #30025e;
+    margin-right: 8px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #ffffff;
+}
+
+.photo {
+    width: 32%;
+    height: auto;
+    margin-left: 5px;
+    border: 2px #e1f3b8 solid;
+}
+
+.project-photo {
+    margin-right: 10px;
+    width: 10%;
+    height: auto;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--seed-color);
+    color:  #ffffff;
+    z-index: 1000;
+    border-bottom: 3px #ffffff solid;
+}
+
+nav {
+    order: 2;
+    padding-right:5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px #334112  solid;
+}
+
+#topic {
+    order: 1;
+    padding-left:5%;
+    margin: 0 0 0 0 ;
+    font-size: larger;
+    letter-spacing: 1px;
+}
+
+section {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border-bottom: 3px solid var(--seed-color);
+    min-height: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#home {
+    width: 100%;
+    background-color: #28302f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px #ffffff solid;
+}
+
+#home-div {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #f0f8ff;
+}
+
+#myself {
+    margin: 20% 10% 0;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#about {
+    background-color:  var(--seed-color);
+    text-align: center;
+}
+
+#skills {
+    background-color: aliceblue;
+}
+
+#projects {
+    background-color: blanchedalmond;
+}
+
+#contact {
+    background-color: antiquewhite;
+}
+
+#contact-form {
+    order: 1;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+#contact-me {
+    order: 2;
+}
+
+input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+button {
+    margin-top: 5px;
+}
+
+footer {
+    padding-left: 5px;
+    color: var(--seed-color);;
+}
