@@ -4,6 +4,15 @@
   --color-background: #f7f8fa;
   --color-surface: #ffffff;
   --color-accent: #1d4ed8;
+
+   --border-normal: #9aa5b1;
+  --border-focus: #1d4ed8;
+  --color-error: #c62828;
+  --color-valid: #2e7d32;
+  --color-valid-bg: #e8f5e9;
+
+  --radius: 6px;
+  --transition: 0.2s ease;
 }
 
 * {
@@ -72,3 +81,100 @@ textarea {
 textarea {
   resize: vertical;
 }
+/* ---------- Focus mode ---------- */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--border-focus);
+  outline-offset: 2px;
+  border-color: var(--border-focus);
+}
+/* ---------- Error mode ---------- */
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+  border-color: var(--color-error);
+}
+/* ---------- Valid mode ---------- */
+input.is-valid,
+select.is-valid,
+textarea.is-valid {
+  border-color: var(--color-valid);
+}
+
+#form-status {
+  margin: 0 0 1rem;
+  color: var(--color-valid);
+  font-weight: 600;
+}
+
+#form-status:not(:empty) {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-valid-bg);
+  border: 2px solid var(--color-valid);
+  border-radius: var(--radius);
+}
+
+/* ---------- Live Counter ---------- */
+.counter {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.counter-short {
+  color: var(--color-error);
+}
+
+.counter-ok {
+  color: var(--color-valid);
+}
+
+.error-message {
+  min-height: 1.4em;            /* keeps the layout from jumping */
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-error);
+}
+
+/* ---------- Buttons ---------- */
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.65rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+button[type="submit"] {
+  color: #ffffff;
+  background-color: var(--color-accent);
+}
+
+button[type="submit"]:hover {
+  background-color: #1e40af;
+}
+
+button[type="button"] {
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+button[type="button"]:hover {
+  background-color: #e0e7ff;
+}
+
+button:focus {
+  outline: 3px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+
