@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,15 +9,16 @@
   <link rel="stylesheet" href="css/index.css">
   <script src="js/feedback.js" defer></script>
 </head>
-<body>
-   <header class="flex-element">
-        <h1 id="topic">Samadhi's Portfolio</h1>
 
-        <nav>
-            <a href="./index.html" class="link">HOME</a>
-            <a href="./feedback.html" class="link">FEEDBACK</a>
-        </nav>
-    </header>
+<body>
+  <header class="flex-element">
+    <h1 id="topic">Samadhi's Portfolio</h1>
+
+    <nav>
+      <a href="./index.html" class="link">HOME</a>
+      <a href="./feedback.html" class="link">FEEDBACK</a>
+    </nav>
+  </header>
   <main class="feedback-page">
     <a class="back-link" href="index.html">Back to portfolio</a>
 
@@ -28,24 +30,14 @@
       <!-- Full Name -->
       <div class="field">
         <label for="fullName">Full Name</label>
-        <input
-          type="text"
-          id="fullName"
-          name="fullName"
-          autocomplete="name"
-          aria-describedby="fullName-error">
+        <input type="text" id="fullName" name="fullName" autocomplete="name" aria-describedby="fullName-error">
         <p class="error-message" id="fullName-error"></p>
       </div>
 
       <!-- Email -->
       <div class="field">
         <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autocomplete="email"
-          aria-describedby="email-error">
+        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
         <p class="error-message" id="email-error"></p>
       </div>
 
@@ -65,11 +57,7 @@
       <!-- Comments -->
       <div class="field">
         <label for="comments">Comments</label>
-        <textarea
-          id="comments"
-          name="comments"
-          rows="5"
-          aria-describedby="comments-counter comments-error"></textarea>
+        <textarea id="comments" name="comments" rows="5" aria-describedby="comments-counter comments-error"></textarea>
         <p class="counter counter-short" id="comments-counter">0 / 15 characters minimum</p>
         <p class="error-message" id="comments-error"></p>
       </div>
@@ -77,18 +65,13 @@
       <!-- Website (optional) -->
       <div class="field">
         <label for="website">Website (optional)</label>
-        <input
-          type="url"
-          id="website"
-          name="website"
-          placeholder="https://example.com"
-          autocomplete="url"
+        <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url"
           aria-describedby="website-error">
         <p class="error-message" id="website-error"></p>
       </div>
 
-   
-      <p id="form-status" role="status" ></p>
+
+      <p id="form-status" role="status"></p>
 
       <div class="button-row">
         <button type="submit">Submit</button>
@@ -98,4 +81,5 @@
     </form>
   </main>
 </body>
+
 </html>
