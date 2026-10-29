@@ -36,14 +36,69 @@ function clearFieldError(input) {
   input.classList.remove("is-invalid", "is-valid");
 }
 
+// ----------- utility functions ----------
+
+function isLetter(char) {
+  return char.toLowerCase() !== char.toUpperCase();
+}
+
+function isAllowedNameChar(char) {
+  return isLetter(char) || char === " " || char === "'" || char === "-";
+}
+
+// ----------- Validator functions --------
+
+function validateFullName() {
+  const value = fullNameInput.value.trim();
+
+  if (value === "") {
+    showFieldError(fullNameInput, "Please enter your full name.");
+    return false;
+  }
+
+  if (value.length < 2) {
+    showFieldError(fullNameInput, "Name must be at least 2 characters.");
+    return false;
+  }
+
+  for (const char of value) {
+    if (!isAllowedNameChar(char)) {
+      showFieldError(fullNameInput, "Use only letters, spaces, apostrophes and hyphens.");
+      return false;
+    }
+  }
+
+  showFieldValid(fullNameInput);
+  return true;
+}
+
+// ----------- Show success message ------
+function showSuccess(name) {
+  statusMessage.textContent = "Thanks for your feedback, " + name + "!";
+
+}
+
+function resetForm() {
+  form.reset();
+}
+
 // ----------- Submit Action --------------
 function handleSubmit(event) {
   event.preventDefault(); // stop the page from reloading
 
+  const nameOk = validateFullName();
+
+   if (!nameOk) {
+    const firstInvalid = form.querySelector(".is-invalid");
+    firstInvalid.focus();
+    return;
+  }
  
   const name = fullNameInput.value.trim();
 
-  console.log(name);
+  resetForm();
+  showSuccess(name);
+
 }
 
 
