@@ -10,8 +10,33 @@ const counter = document.getElementById("comments-counter");
 const statusMessage = document.getElementById("form-status");
 const clearButton = document.getElementById("clear-btn");
 
- 
 
+// ----------  Error helpers ----------
+
+function showFieldError(input, message) {
+  const errorElement = document.getElementById(input.id + "-error");
+
+  errorElement.textContent = message;
+  input.classList.add("is-invalid");
+  input.classList.remove("is-valid");
+}
+
+function showFieldValid(input) {
+  const errorElement = document.getElementById(input.id + "-error");
+
+  errorElement.textContent = "";
+  input.classList.add("is-valid");
+  input.classList.remove("is-invalid");
+}
+
+function clearFieldError(input) {
+  const errorElement = document.getElementById(input.id + "-error");
+
+  errorElement.textContent = "";
+  input.classList.remove("is-invalid", "is-valid");
+}
+
+// ----------- Submit Action --------------
 function handleSubmit(event) {
   event.preventDefault(); // stop the page from reloading
 
