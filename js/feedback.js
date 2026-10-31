@@ -138,14 +138,43 @@ function validateWebsite() {
   return true;
 }
 
+// ---------- Live charactor counter -----
+function updateCounter() {
+  const count = commentsInput.value.trim().length;
+
+  if (count < MIN_COMMENT_LENGTH) {
+    counter.textContent = count + " / " + MIN_COMMENT_LENGTH + " characters minimum";
+    counter.classList.add("counter-short");
+    counter.classList.remove("counter-ok");
+  } else {
+    counter.textContent = count + " characters, minimum reached";
+    counter.classList.add("counter-ok");
+    counter.classList.remove("counter-short");
+  }
+}
+
+
 // ----------- Show success message ------
 function showSuccess(name) {
   statusMessage.textContent = "Thanks for your feedback, " + name + "!";
 
 }
 
+function hideSuccess() {
+  statusMessage.textContent = "";
+}
+
 function resetForm() {
   form.reset();
+
+  clearFieldError(fullNameInput);
+  clearFieldError(emailInput);
+  clearFieldError(topicSelect);
+  clearFieldError(commentsInput);
+  clearFieldError(websiteInput);
+  updateCounter();
+
+  hideSuccess();
 }
 
 // ----------- Submit Action --------------
@@ -168,11 +197,13 @@ function handleSubmit(event) {
 
   resetForm();
   showSuccess(name);
-
 }
 
 
 // ---------- Event listeners  ----------
  
 form.addEventListener("submit", handleSubmit);
- 
+commentsInput.addEventListener("input", updateCounter);
+
+// Show "0 / 15 characters minimum" when the page loads
+updateCounter();
