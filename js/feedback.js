@@ -204,6 +204,6 @@ function handleSubmit(event) {
  
 form.addEventListener("submit", handleSubmit);
 commentsInput.addEventListener("input", updateCounter);
-
+clearButton.addEventListener("click", resetForm);
 // Show "0 / 15 characters minimum" when the page loads
 updateCounter();
