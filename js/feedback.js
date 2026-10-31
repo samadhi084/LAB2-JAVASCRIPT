@@ -97,6 +97,7 @@ function validateEmail() {
 
 // Topic Field
 function validateTopic() {
+  console.log(topicSelect.value + ":");
   if (topicSelect.value === "") {
     showFieldError(topicSelect, "Please choose a topic.");
     return false;
