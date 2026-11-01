@@ -151,13 +151,6 @@ h2 {
     background-color: antiquewhite;
 }
 
-#contact-form {
-    order: 1;
-    width: 50%;
-    margin-top: 0;
-    margin-bottom: 10%;
-}
-
 #contact-me {
     order: 2;
 }
