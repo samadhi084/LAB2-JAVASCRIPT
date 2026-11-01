@@ -1,6 +1,4 @@
 
-const MIN_COMMENT_LENGTH = 15;
-
 // ---------- Element references ---------
 const form = document.getElementById("feedback-form");
 const fullNameInput = document.getElementById("fullName");
@@ -108,6 +106,8 @@ function validateTopic() {
 }
 
 // Comment field
+const MIN_COMMENT_LENGTH = 15;
+
 function validateComments() {
   const value = commentsInput.value.trim();
 
@@ -128,7 +128,7 @@ function validateWebsite() {
     return true;
   }
 
-  // checkValidity() uses the browser's rules for type="url"
+  // checkValidity() 
   if (!websiteInput.checkValidity()) {
     showFieldError(websiteInput, "Please enter a valid URL, e.g. https://example.com.");
     return false;
@@ -155,8 +155,15 @@ function updateCounter() {
 
 
 // ----------- Show success message ------
+
+const SUCCESS_DURATION = 4000; // milliseconds
+let successMsgTimer; // reassigned every time a success message is shown
+
 function showSuccess(name) {
   statusMessage.textContent = "Thanks for your feedback, " + name + "!";
+
+  clearTimeout(successMsgTimer); // Browser inbuild functions, clearTimeout and setTimeout
+  successMsgTimer = setTimeout(hideSuccess, SUCCESS_DURATION);
 
 }
 
@@ -199,11 +206,10 @@ function handleSubmit(event) {
   showSuccess(name);
 }
 
-
 // ---------- Event listeners  ----------
- 
 form.addEventListener("submit", handleSubmit);
 commentsInput.addEventListener("input", updateCounter);
 clearButton.addEventListener("click", resetForm);
+
 // Show "0 / 15 characters minimum" when the page loads
 updateCounter();
