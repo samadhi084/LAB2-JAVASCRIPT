@@ -95,7 +95,7 @@ function validateEmail() {
 
 // Topic Field
 function validateTopic() {
-  console.log(topicSelect.value + ":");
+ 
   if (topicSelect.value === "") {
     showFieldError(topicSelect, "Please choose a topic.");
     return false;
@@ -143,7 +143,7 @@ function updateCounter() {
   const count = commentsInput.value.trim().length;
 
   if (count < MIN_COMMENT_LENGTH) {
-    counter.textContent = count + " / " + MIN_COMMENT_LENGTH + " characters minimum";
+    counter.textContent = count + " / " + MIN_COMMENT_LENGTH + " characters minimum"; //0 / 15 characters minimum
     counter.classList.add("counter-short");
     counter.classList.remove("counter-ok");
   } else {
