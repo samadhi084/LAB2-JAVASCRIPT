@@ -1,6 +1,6 @@
 
 :root {
-  --color-text: #1f2933;
+  --color-text: #092f4f;
   --color-background: #f7f8fa;
   --color-surface: #ffffff;
   --color-accent: #1d4ed8;
@@ -80,21 +80,22 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid var(--border-focus);
-  outline-offset: 2px;
   border-color: var(--border-focus);
+  border-width: 5px;
 }
 /* ---------- Error mode ---------- */
 input.is-invalid,
 select.is-invalid,
 textarea.is-invalid {
   border-color: var(--color-error);
+  border-width: 5px;
 }
 /* ---------- Valid mode ---------- */
 input.is-valid,
 select.is-valid,
 textarea.is-valid {
   border-color: var(--color-valid);
+  border-width: 5px;
 }
 
 #form-status {
