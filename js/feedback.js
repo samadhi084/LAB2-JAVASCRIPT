@@ -39,7 +39,9 @@ function clearFieldError(input) {
 // ----------- utility functions ----------
 
 function isLetter(char) {
-  return char.toLowerCase() !== char.toUpperCase();
+  // check if the character is a letter by comparing its lowercase and uppercase forms
+  // Symbols, numbers, and whitespace do not have uppercase and lowercase
+  return char.toLowerCase() !== char.toUpperCase(); 
 }
 
 function isAllowedNameChar(char) {
@@ -84,7 +86,7 @@ function validateEmail() {
   const domain = value.split("@")[1];
   const domainHasDot = domain !== undefined && domain.includes(".");
 
-  if (!emailInput.checkValidity() || !domainHasDot) {
+  if (!emailInput.checkValidity() || !domainHasDot) { // checkValidity() is a built-in function that checks the validity of the input based on the type and pattern attributes
     showFieldError(emailInput, "Please enter a valid email like name@example.com.");
     return false;
   }
@@ -129,7 +131,7 @@ function validateWebsite() {
   }
 
   // checkValidity() 
-  if (!websiteInput.checkValidity()) {
+  if (!websiteInput.checkValidity()) { // checkValidity() is a built-in function that checks the validity of the input based on the type and pattern attributes
     showFieldError(websiteInput, "Please enter a valid URL, e.g. https://example.com.");
     return false;
   }
@@ -195,8 +197,8 @@ function handleSubmit(event) {
   const websiteOk = validateWebsite();
 
   if (!nameOk || !emailOk || !topicOk || !commentsOk || !websiteOk) {
-    const firstInvalid = form.querySelector(".is-invalid");
-    firstInvalid.focus();
+    const firstInvalid = form.querySelector(".is-invalid"); // get the first invalid field
+    firstInvalid.focus(); // move the focus to the first invalid field
     return;
   }
  
