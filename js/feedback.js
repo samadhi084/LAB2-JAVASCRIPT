@@ -109,12 +109,13 @@ function validateTopic() {
 
 // Comment field
 const MIN_COMMENT_LENGTH = 15;
+const MAX_COMMENT_LENGTH = 40;
 
 function validateComments() {
   const value = commentsInput.value.trim();
 
-  if (value.length < MIN_COMMENT_LENGTH) {
-    showFieldError(commentsInput, "Comments must be at least 15 characters.");
+  if (value.length < MIN_COMMENT_LENGTH || value.length > MAX_COMMENT_LENGTH) {
+    showFieldError(commentsInput, "Comments must be between 15 and 40 characters.");
     return false;
   }
 
